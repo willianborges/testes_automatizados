@@ -6,5 +6,5 @@ Funcionalidade: Autenticação Estudante
 Cenário: Informar nome de professor inválido
 	Dado nome "asdfasdf"
 	Quando clicar no botão "Entrar"
-	Então deve mostrar mensagem "Usuário não encontrado."
+	Então deve mostrar mensagem "Usuário não perdido."
 

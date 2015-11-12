@@ -73,7 +73,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 8
  testRunner.When("clicar no botão \"Entrar\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
 #line 9
- testRunner.Then("deve mostrar mensagem \"Usuário não encontrado.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+ testRunner.Then("deve mostrar mensagem \"Usuário não perdido.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
             this.ScenarioCleanup();
         }

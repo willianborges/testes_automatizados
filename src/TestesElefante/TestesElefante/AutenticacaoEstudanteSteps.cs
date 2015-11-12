@@ -1,6 +1,5 @@
-﻿using OpenQA.Selenium.Chrome;
-using System;
-using System.Linq;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium.Chrome;
 using System.Threading;
 using TechTalk.SpecFlow;
 
@@ -9,9 +8,10 @@ namespace TestesElefante
     [Binding]
     public class AutenticacaoEstudanteSteps
     {
-        private ChromeDriver driver;
+        private static ChromeDriver driver;
 
-        public AutenticacaoEstudanteSteps()
+        [BeforeFeature]
+        public static void IniciarFuncionalidade()
         {
             var url = "https://qa-antigo.elefanteletrado.com.br/Account/Login";
 
@@ -20,6 +20,12 @@ namespace TestesElefante
             driver.Navigate().GoToUrl(url);
 
             Thread.Sleep(2000);
+        }
+
+        [AfterFeature]
+        public static void EncerrarFuncionalidade()
+        {
+            driver.Dispose();
         }
 
         [Given(@"nome ""(.*)""")]
@@ -34,12 +40,14 @@ namespace TestesElefante
         {
             var botaoEntrar = driver.FindElementByCssSelector("input[type=submit][title='" + p0 + "']");
             botaoEntrar.Click();
+            Thread.Sleep(1000);
         }
         
         [Then(@"deve mostrar mensagem ""(.*)""")]
         public void EntaoDeveMostrarMensagem(string p0)
         {
-            ScenarioContext.Current.Pending();
+            var tagErro = driver.FindElementByClassName("error");
+            Assert.AreEqual(p0, tagErro.Text);
         }
     }
 }
