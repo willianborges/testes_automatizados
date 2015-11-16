@@ -67,35 +67,25 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Autenticacao.feature.cs">
+    <Compile Include="AutenticacaoEstudante.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Autenticacao.feature</DependentUpon>
+      <DependentUpon>AutenticacaoEstudante.feature</DependentUpon>
     </Compile>
     <Compile Include="AutenticacaoEstudanteSteps.cs" />
-    <Compile Include="AutenticacaoProfessorSelecaoTurmas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SpecFlowFeature1.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SpecFlowFeature1.feature</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Autenticacao.feature">
+    <None Include="AutenticacaoEstudante.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Autenticacao.feature.cs</LastGenOutput>
+      <LastGenOutput>AutenticacaoEstudante.feature.cs</LastGenOutput>
     </None>
     <None Include="Default.srprofile">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
     <None Include="runtests.cmd" />
-    <None Include="SpecFlowFeature1.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SpecFlowFeature1.feature.cs</LastGenOutput>
-    </None>
     <None Include="SpecRunTestProfile.xsd">
       <SubType>Designer</SubType>
     </None>

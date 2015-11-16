@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium.Chrome;
+﻿using OpenQA.Selenium.Chrome;
 using System.Threading;
 using TechTalk.SpecFlow;
 
@@ -28,8 +27,8 @@ namespace TestesElefante
             driver.Dispose();
         }
 
-        [Given(@"nome ""(.*)""")]
-        public void DadoNome(string p0)
+        [Given(@"professor ""(.*)""")]
+        public void DadoProfessor(string p0)
         {
             var campoLogin = driver.FindElementById("name");
             campoLogin.SendKeys(p0);
@@ -43,11 +42,42 @@ namespace TestesElefante
             Thread.Sleep(1000);
         }
         
+        [When(@"selecionar a turma (.*)")]
+        public void QuandoSelecionarATurma(int courseName)
+        {
+            /*var cmbCourseFormat = "//select[@id='CourseId']/option[contains(text(),'{0}')]";
+            var itemCombo = browser.FindElement(By.XPath(String.Format(cmbCourseFormat, courseName)));
+            itemCombo.Click();
+            Thread.Sleep(500);*/
+
+            ScenarioContext.Current.Pending();
+        }
+        
+        [When(@"selecionar o aluno ""(.*)""")]
+        public void QuandoSelecionarOAluno(string p0)
+        {
+            ScenarioContext.Current.Pending();
+        }
+        
+        [When(@"informar a senha ""(.*)""")]
+        public void QuandoInformarASenha(string p0)
+        {
+            ScenarioContext.Current.Pending();
+        }
+        
+        [Then(@"devem entrar na biblioteca do estudante")]
+        public void EntaoDevemEntrarNaBibliotecaDoEstudante()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        /*
         [Then(@"deve mostrar mensagem ""(.*)""")]
         public void EntaoDeveMostrarMensagem(string p0)
         {
             var tagErro = driver.FindElementByClassName("error");
             Assert.AreEqual(p0, tagErro.Text);
         }
+        */
     }
 }
